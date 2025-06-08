@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>DEKCLINIC Chat Assistant</title>
-</head>
-<body>
-  <h1>Добро пожаловать в DEKCLINIC!</h1>
-  <div id="vf-chat"></div>
 
-  <script type="text/javascript">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEKCLINIC Chat</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 50px;">
+    <h1>Добро пожаловать в DEKCLINIC!</h1>
+    <p>Наш ассистент готов ответить на ваши вопросы.</p>
+
+    <script type="text/javascript">
     (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: "683c358e5e930b4a978ae69b" },
-          url: "https://general-runtime.voiceflow.com",
-          versionID: "production",
-          voice: { url: "https://runtime-api.voiceflow.com" }
-        });
-      };
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-      v.type = "text/javascript";
-      s.parentNode.insertBefore(v, s);
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: "683c358e5e930b4a978ae69b" },
+                url: "https://general-runtime.voiceflow.com",
+                versionID: "production",
+                voice: {
+                    url: "https://runtime.voiceflow.com"
+                }
+            });
+        };
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
     })(document, "script");
-  </script>
+    </script>
 </body>
 </html>
