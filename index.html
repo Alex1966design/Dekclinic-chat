@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Декклиник — Чат-ассистент</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>DEKCLINIC – Чат-ассистент</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
       background-color: #ffffff;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://creator.voiceflow.com/project/683c358e5e930b4a978ae69c/integration/webchat"
-    allow="microphone; autoplay"
-  ></iframe>
+
+<!-- Скрипт Voiceflow -->
+<script type="text/javascript">
+  (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: "683c358e5e930b4a978ae69b" },
+        url: "https://general-runtime.voiceflow.com",
+        versionID: "production",
+        voice: {
+          url: "https://runtime-api.voiceflow.com"
+        }
+      });
+    };
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+  })(document, "script");
+</script>
+
 </body>
 </html>
