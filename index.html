@@ -2,37 +2,67 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>DEKCLINIC – Чат-ассистент</title>
+  <title>DEKCLINIC – Онлайн чат</title>
   <style>
     body {
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
       background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .chat-link {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #007bff;
+      text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-<!-- Скрипт Voiceflow -->
-<script type="text/javascript">
-  (function(d, t) {
-    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-    v.onload = function() {
-      window.voiceflow.chat.load({
-        verify: { projectID: "683c358e5e930b4a978ae69b" },
-        url: "https://general-runtime.voiceflow.com",
-        versionID: "production",
-        voice: {
-          url: "https://runtime-api.voiceflow.com"
+  <h1>Добро пожаловать в DEKCLINIC!</h1>
+  <div class="chat-link" onclick="openVoiceflowChat()">Открыть чат с ассистентом</div>
+
+  <!-- Voiceflow Script -->
+  <script type="text/javascript">
+    function openVoiceflowChat() {
+      const interval = setInterval(() => {
+        const button = document.querySelector('voiceflow-chat-widget')?.shadowRoot?.querySelector('button');
+        if (button) {
+          button.click();
+          clearInterval(interval);
         }
-      });
-    };
-    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-    v.type = "text/javascript";
-    s.parentNode.insertBefore(v, s);
-  })(document, "script");
-</script>
+      }, 500);
+    }
+
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: "683c358e5e930b4a978ae69b" },
+          url: "https://general-runtime.voiceflow.com",
+          versionID: "production",
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      };
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, "script");
+  </script>
 
 </body>
 </html>
-
